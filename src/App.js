@@ -16,7 +16,7 @@ function App() {
     async function fetchData() {
       try {
         // Fetch data from the API
-        const response = await fetch(``);
+        const response = await fetch(`http://localhost:3000/bots`);
         const data = await response.json();
         // Update the bots state with the fetched data
         setBots(data);
@@ -50,7 +50,7 @@ function App() {
   const handleDeleteBot = async (bot) => {
     try {
       // Send a DELETE request to the API to delete the bot
-      await fetch(`/${bot.id}`, {
+      await fetch(`http://localhost:3000/bots/${bot.id}`, {
         method: 'DELETE',
         headers: {
           'Content-Type': 'application/json',
