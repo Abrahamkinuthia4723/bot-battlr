@@ -1,83 +1,59 @@
 import React from "react";
 
-const botTypeClasses = {
-  Assault: "icon military",
-  Defender: "icon shield",
-  Support: "icon plus circle",
-  Medic: "icon ambulance",
-  Witch: "icon magic",
-  Captain: "icon star",
-};
 
-function BotCard({ bot, enlistBot, deleteBot }) {
-  // Define a function to handle enlisting the bot
-  const handleEnlistBot = () => {
-    // Call the enlistBot function passed as a prop and pass the bot object as an argument
-    enlistBot(bot);
-  };
-
-  // Define a function to handle deleting the bot
-  const handleDeleteBot = () => {
-    // Call the deleteBot function passed as a prop and pass the bot object as an argument
-    deleteBot(bot);
-  };
-
+function BotCard({ bot, clickEvent, deleteBot }) {
   return (
-    <div className="bot-card">
-      {/* Define a div element that contains the bot's avatar and name */}
-      <div style={{ cursor: "pointer" }} key={bot.id} onClick={handleEnlistBot}>
-        {/* Define a div element that contains the bot's avatar */}
-        <div>
-          <img alt="OH NO!" src={bot.avatar_url} style={{ borderRadius: "50%" }} />
-        </div>
-        {/* Define a div element that contains the bot's name and class icon */}
-        <div>
-          <div>
-            {bot.name}
-            {/* Define an i element that displays the bot's class icon */}
-            <i className={botTypeClasses[bot.bot_class]} />
-          </div>
-          {/* Define a div element that contains the bot's catchphrase */}
-          <div style={{ maxWidth: "150px" }}>
-            <small>{bot.catchphrase}</small>
-          </div>
-        </div>
-        {/* Define a div element that contains the bot's health, damage, and armor */}
-        <div>
-          {/* Define a span element that displays the bot's health */}
-          <span>
-            <i className="icon heartbeat" />
-            {bot.health}
-          </span>
-          {/* Define a span element that displays the bot's damage */}
-          <span>
-            <i className="icon lightning" />
-            {bot.damage}
-          </span>
-          {/* Define a span element that displays the bot's armor */}
-          <span>
-            <i className="icon shield" />
-            {bot.armor}
-          </span>
-          {/* Define a span element that contains the delete button */}
-          <span>
-            <div style={{ textAlign: "center" }}>
-              {/* Define a button element that displays the delete button */}
-              <button
-                style={{ padding: "0", background: "none", border: "none", color: "red" }}
+
+ <div className="card col-4 mt-5 h-100 shadow p-3 mb-5 bg-body rounded"
+ key={bot.id}
+        onClick={() => clickEvent(bot)}
+ >
+    <div className="card-body"  >
+ 
+   
+          <h3 className="date" onClick={() => clickEvent(bot)}>Name: {bot.name}
+          
+          </h3>
+        
+          <h3 className="description">Health: {bot.health}</h3>
+       
+          <h3 className="category">Damage: {bot.damage}</h3>
+       
+          <h3 className="amount">Armor: {bot.armor}</h3>
+       
+        {/* <th>
+          <h3 className="amount">BotClass: {bot.bot_class}</h3>
+        </th> */}
+     
+          {/* <h3 className="amount"></h3> */}
+          <p>
+              <strong>Catchphrase: </strong>
+              {bot.catchphrase}
+            </p>
+            {/* Catchphrase: {bot.catchphrase}</h3> */}
+      
+      
+          <img src={bot.avatar_url} alt="url" className="img"> 
+
+          </img>
+        
+        {/* <th>
+          <h3 className="amount">Created At: {bot.created_at}</h3>
+        </th>
+        <th>
+          <h3 className="amount">Updated At: {bot.updated_at}</h3>
+        </th> */}
+      <button className="btn btn-warning"
                 onClick={(event) => {
                   event.stopPropagation();
-                  handleDeleteBot();
+                  deleteBot(bot);
                 }}
               >
-                x
+                Delete
               </button>
-            </div>
-          </span>
-        </div>
-      </div>
-    </div>
-  );
-}
+  </div>
+  </div>
+   );
+  }
 
-export default BotCard;
+  export default BotCard;
