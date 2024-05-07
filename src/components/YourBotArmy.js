@@ -16,7 +16,7 @@ function BotArmy ({bots, removeBot, deleteBot}){
 
     return(
         <div className= 'd-block p-2 bg-dark text-black army'>
-            <strong style={{color: "white"}}>STINNE BOT ARMY </strong>
+            <strong style={{color: "white"}}>MY BOT ARMY </strong>
             <div className="container mt-4">
                 <div className="row">
                     {myBotArmy}
