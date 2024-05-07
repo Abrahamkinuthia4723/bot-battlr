@@ -7,7 +7,8 @@ function Display() {
 
   useEffect(() => {
 
-    fetch(""https://vercel1-smoky.vercel.app/bots")
+    fetch(" "http://localhost:3000/bots")
+")
       .then((resp) => resp.json())
       .then(data => setBot(data))
   }, [])
