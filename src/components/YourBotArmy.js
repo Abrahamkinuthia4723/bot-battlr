@@ -1,28 +1,26 @@
 import React from "react";
 import BotCard from "./BotCard";
 
-function BotArmy ({bots, removeBot, deleteBot}){
+function YourBotArmy({bots, handleClick, handleDelete}) {
 
-    let myBotArmy =  bots.map((bot)=>{
-        return (
-            <BotCard
-            key={bot.id}
-            bot={bot}
-            deleteBot={removeBot}
-            />
-        )
-    })
+  const displayCards=bots.map(bot=>{
+    return<BotCard key={bot.id} 
+    bot={bot}
+    handleClick={handleClick}
+    handleDelete={handleDelete}
+    />})
 
-    return(
-        <div className= 'd-block p-2 bg-dark text-black army'>
-            <strong style={{color: "white"}}>MY BOT ARMY </strong>
-            <div className="container mt-4">
-                <div className="row">
-                    {myBotArmy}
-                </div>
-            </div>
+  return (
+    <div className="ui segment inverted olive bot-army">
+      <div className="ui five column grid">
+        <div className="row bot-army-row">
+          Your Bot Army
+          {displayCards}
+
         </div>
-    )
+      </div>
+    </div>
+  );
 }
 
-export default BotArmy
+export default YourBotArmy;

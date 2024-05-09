@@ -1,48 +1,65 @@
 import React from "react";
 
-function BotCard({ bot, clickEvent, deleteBot }) {
+const botTypeClasses = {
+  Assault: "icon military",
+  Defender: "icon shield",
+  Support: "icon plus circle",
+  Medic: "icon ambulance",
+  Witch: "icon magic",
+  Captain: "icon star",
+};
+
+function BotCard({bot,handleClick, handleDelete}) {
   return (
+    <div className="ui column">
+      <div
+        className="ui card"
+        key={bot.id}
+        onClick={() =>handleClick(bot.id)}
+      >
+        <div className="image">
+          <img alt="oh no!" src={bot.avatar_url} />
+        </div>
+        <div className="content">
+          <div className="header">
+            {bot.name}
+            <i className={botTypeClasses[bot.bot_class]} />
+          </div>
+          <div className="meta text-wrap">
+            <small>{bot.catchphrase}</small>
+          </div>
+        </div>
+        <div className="extra content">
+          <span>
+            <i className="icon heartbeat" />
+            {bot.health}
+          </span>
 
- <div className="card col-4 mt-5 h-100 shadow p-3 mb-5 bg-body rounded"
- key={bot.id}
-        onClick={() => clickEvent(bot)}
- >
-    <div className="card-body"  >
- 
-   
-          <h3 className="date" onClick={() => clickEvent(bot)}>Name: {bot.name}
-          
-          </h3>
-        
-          <h3 className="description">Health: {bot.health}</h3>
-       
-          <h3 className="category">Damage: {bot.damage}</h3>
-       
-          <h3 className="amount">Armor: {bot.armor}</h3>
-       
-          <p>
-              <strong>Catchphrase: </strong>
-              {bot.catchphrase}
-            </p>
-            
-      
-      
-          <img src={bot.avatar_url} alt="url" className="img"> 
-
-          </img>
-        
-  
-      <button className="btn btn-warning"
-                onClick={(event) => {
-                  event.stopPropagation();
-                  deleteBot(bot);
-                }}
-              >
+          <span>
+            <i className="icon lightning" />
+            {bot.damage}
+          </span>
+          <span>
+            <i className="icon shield" />
+            {bot.armor}
+          </span>
+          <span>
+            <div className="ui center aligned segment basic">
+            <button
+                className="ui mini red button"
+                onClick={(e) =>
+                { e.stopPropagation()
+                  handleDelete(bot.id)
+                }
+                }>
                 Delete
               </button>
-  </div>
-  </div>
-   );
-  }
+            </div>
+          </span>
+        </div>
+      </div>
+    </div>
+  );
+}
 
-  export default BotCard;
+export default BotCard;
