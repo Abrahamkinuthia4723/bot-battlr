@@ -1,6 +1,5 @@
 import React from "react";
 
-
 function BotCard({ bot, clickEvent, deleteBot }) {
   return (
 
@@ -21,28 +20,18 @@ function BotCard({ bot, clickEvent, deleteBot }) {
        
           <h3 className="amount">Armor: {bot.armor}</h3>
        
-        {/* <th>
-          <h3 className="amount">BotClass: {bot.bot_class}</h3>
-        </th> */}
-     
-          {/* <h3 className="amount"></h3> */}
           <p>
               <strong>Catchphrase: </strong>
               {bot.catchphrase}
             </p>
-            {/* Catchphrase: {bot.catchphrase}</h3> */}
+            
       
       
           <img src={bot.avatar_url} alt="url" className="img"> 
 
           </img>
         
-        {/* <th>
-          <h3 className="amount">Created At: {bot.created_at}</h3>
-        </th>
-        <th>
-          <h3 className="amount">Updated At: {bot.updated_at}</h3>
-        </th> */}
+  
       <button className="btn btn-warning"
                 onClick={(event) => {
                   event.stopPropagation();

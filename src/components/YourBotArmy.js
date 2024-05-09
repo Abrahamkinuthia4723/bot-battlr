@@ -9,7 +9,6 @@ function BotArmy ({bots, removeBot, deleteBot}){
             key={bot.id}
             bot={bot}
             deleteBot={removeBot}
-            // deleteBot={deleteBot}
             />
         )
     })
