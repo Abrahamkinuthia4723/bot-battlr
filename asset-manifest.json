@@ -1,15 +1,15 @@
 {
   "files": {
-    "main.css": "/bot-battlr/static/css/main.073c9b0a.css",
-    "main.js": "/bot-battlr/static/js/main.fdca5ac3.js",
-    "static/js/787.2d39602d.chunk.js": "/bot-battlr/static/js/787.2d39602d.chunk.js",
-    "index.html": "/bot-battlr/index.html",
-    "main.073c9b0a.css.map": "/bot-battlr/static/css/main.073c9b0a.css.map",
-    "main.fdca5ac3.js.map": "/bot-battlr/static/js/main.fdca5ac3.js.map",
-    "787.2d39602d.chunk.js.map": "/bot-battlr/static/js/787.2d39602d.chunk.js.map"
+    "main.css": "/http//AbrahamKinuthia4723.github.io/bot-battlr/static/css/main.6b67997b.css",
+    "main.js": "/http//AbrahamKinuthia4723.github.io/bot-battlr/static/js/main.4b9c55bc.js",
+    "static/js/787.2d39602d.chunk.js": "/http//AbrahamKinuthia4723.github.io/bot-battlr/static/js/787.2d39602d.chunk.js",
+    "index.html": "/http//AbrahamKinuthia4723.github.io/bot-battlr/index.html",
+    "main.6b67997b.css.map": "/http//AbrahamKinuthia4723.github.io/bot-battlr/static/css/main.6b67997b.css.map",
+    "main.4b9c55bc.js.map": "/http//AbrahamKinuthia4723.github.io/bot-battlr/static/js/main.4b9c55bc.js.map",
+    "787.2d39602d.chunk.js.map": "/http//AbrahamKinuthia4723.github.io/bot-battlr/static/js/787.2d39602d.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.073c9b0a.css",
-    "static/js/main.fdca5ac3.js"
+    "static/css/main.6b67997b.css",
+    "static/js/main.4b9c55bc.js"
   ]
 }
