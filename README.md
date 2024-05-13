@@ -5,6 +5,7 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 https://github.com/Abrahamkinuthia4723/bot-battlr/assets/162336259/0258d846-850b-44f1-aedc-5c2288c403b6
 
+
 ## Available Scripts
 
 In the project directory, you can run:
